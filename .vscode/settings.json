@@ -1,0 +1,6 @@
+{
+    "solidity.defaultCompiler": "localNodeModule",
+    "[javascript]": {
+        "editor.maxTokenizationLineLength": 1000000
+    }
+}

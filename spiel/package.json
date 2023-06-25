@@ -1,0 +1,31 @@
+{
+  "name": "spiel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ganache": "ganache-cli --networkId $npm_package_config_ganache_networkId",
+    "start": "concurrently \"npm run ganache\" \"npm run migrate\" ",
+    "migrate": "rm -rf build && truffle migrate --reset --compile-all --network development"
+  },
+  "config": {
+    "ganache": {
+      "networkId": 5777,
+      "gasLimit": 6721975,
+      "gasPrice": 20000000000
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.9",
+    "dotenv": "^16.0.3",
+    "ganache": "^7.8.0",
+    "solc": "^0.8.19"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.8.3",
+    "concurrently": "^8.0.1"
+  }
+}
